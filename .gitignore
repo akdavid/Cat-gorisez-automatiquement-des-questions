@@ -26,12 +26,12 @@ data/
 
 # MLflow
 mlruns
-mlruns_bert_v0
 
 # BERT Models
 2024-08-16_17-15-14-bert-model
 2024-08-16_19-54-59-bert-model
 2024-08-19_15-10-53-bert-model
+2024-08-27_23-50-35-bert-model
 
 # Perso
 custom_w2v_model.weights.h5

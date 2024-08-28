@@ -3,7 +3,7 @@ import argparse
 from transformers import AutoTokenizer, AutoModelForSequenceClassification, TextClassificationPipeline
 
 # Define the model path
-model_path = '/Users/anthonydavid/Workspace/Openclassrooms/projet_5/2024-08-19_15-10-53-bert-model'
+model_path = '/Users/anthonydavid/Workspace/Openclassrooms/projet_5/2024-08-27_23-50-35-bert-model'
 
 # Automatic device selection
 if torch.cuda.is_available():
