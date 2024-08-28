@@ -14,6 +14,6 @@ Ce projet vise à développer des modèles de classification multilabel capables
 - 06_Word2Vec_v0.ipynb, 06_Word2Vec_v1.ipynb, 06_Word2Vec_v2.ipynb : Approches basées sur Word2Vec pour l’embedding des questions.
 - 07_BERT_training.ipynb : Entraînement du modèle BERT pour la classification multilabel.
 - 08_BERT_predict.ipynb : Notebook pour faire des prédictions de tags à l’aide du modèle BERT entraîné.
-- main.py : Script principal pour faire des prédictions à partir du modèle BERT depuis la ligne de commande.
+- main.py : Script principal pour faire des prédictions à partir du modèle BERT hébergé sur Hugging Face depuis la ligne de commande.
 - stackoverflow_questions_cleaned_train.csv : Données d’entraînement prétraitées.
 - stackoverflow_questions_cleaned_test.csv : Données de test prétraitées.
