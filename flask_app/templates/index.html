@@ -10,6 +10,13 @@
 <body>
     <div class="container">
         <h1 class="text-center">Tag Prediction with BERT</h1>
+        <div class="theme-toggle">
+            <input type="checkbox" id="toggleDarkMode">
+            <label for="toggleDarkMode" class="slider">
+                <span class="icon sun">☀️</span>
+                <span class="icon moon">🌙</span>
+            </label>
+        </div>
         <form action="/predict" method="post" id="predictionForm">
             <div class="mb-3">
                 <label for="text" class="form-label">Enter your text:</label>

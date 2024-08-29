@@ -1,6 +1,8 @@
+/* Style général */
 body {
     padding: 2rem;
     background-color: #f8f9fa;
+    color: #212529;
     font-family: 'Arial', sans-serif;
 }
 
@@ -38,4 +40,107 @@ h1 {
 
 textarea {
     resize: none;
+}
+
+/* Styles pour le slider et les icônes */
+.theme-toggle {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.theme-toggle input[type="checkbox"] {
+    display: none;
+}
+
+.slider {
+    width: 50px;
+    height: 25px;
+    background-color: #ddd;
+    border-radius: 25px;
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.slider:before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border-radius: 50%;
+    top: 2.5px;
+    left: 2.5px;
+    transition: transform 0.3s ease;
+}
+
+.icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    pointer-events: none; /* Désactive l'interaction de la souris sur les icônes */
+}
+
+.sun {
+    left: 5px;
+    color: #FFD700;
+}
+
+.moon {
+    right: 5px;
+    color: #1E90FF;
+    display: none;
+}
+
+input[type="checkbox"]:checked + .slider {
+    background-color: #333;
+}
+
+input[type="checkbox"]:checked + .slider:before {
+    transform: translateX(25px);
+}
+
+/* Afficher l'icône de la lune en mode jour et l'icône du soleil en mode nuit */
+input[type="checkbox"]:checked + .slider .sun {
+    display: none;
+}
+
+input[type="checkbox"]:checked + .slider .moon {
+    display: inline;
+}
+
+/* Mode sombre */
+.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+.dark-mode .container {
+    background-color: #1e1e1e;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode h1 {
+    color: #ffffff;
+}
+
+.dark-mode .btn-primary {
+    background-color: #1e88e5;
+}
+
+.dark-mode .badge {
+    background-color: #1e88e5;
+}
+
+.dark-mode .form-label {
+    color: #e0e0e0;
+}
+
+.dark-mode .form-control {
+    background-color: #333;
+    color: #e0e0e0;
+    border-color: #555;
 }
