@@ -16,14 +16,14 @@ Ce projet vise à développer des modèles de classification multilabel capables
 - 08_BERT_predict.ipynb : Notebook pour faire des prédictions de tags à l’aide du modèle BERT entraîné.
 - main.py : Script principal pour faire des prédictions à partir du modèle BERT hébergé sur Hugging Face depuis la ligne de commande.
 - flask_app/ : Application Flask pour déployer une interface web permettant de suggérer des tags pour des questions StackOverflow.
-- app.py : Script Flask principal pour l’application web.
-- static/ : Dossier contenant les fichiers CSS et JavaScript pour styliser et dynamiser l’interface web.
-- style.css : Feuille de style pour le thème et l’apparence de l’application.
-- app.js : Fichier JavaScript pour la gestion du mode sombre et des interactions utilisateur.
-- favicon.png : Icône du site web pour l’application Flask.
-- templates/ : Dossier contenant les fichiers HTML pour l’interface utilisateur.
-- index.html : Page principale de l’application web.
+  - app.py : Script Flask principal pour l’application web.
+  - static/ : Dossier contenant les fichiers CSS et JavaScript pour styliser et dynamiser l’interface web.
+    - style.css : Feuille de style pour le thème et l’apparence de l’application.
+    - app.js : Fichier JavaScript pour la gestion du mode sombre et des interactions utilisateur.
+    - favicon.png : Icône du site web pour l’application Flask.
+  - templates/ : Dossier contenant les fichiers HTML pour l’interface utilisateur.
+    - index.html : Page principale de l’application web.
 - requirements.txt : Liste des dépendances Python nécessaires pour exécuter le projet.
 - tests/ : Dossier contenant les tests unitaires pour le projet.
-- test_fake_model.py : Tests pour les modèles factices.
-- test_main.py : Tests pour le script main.py.
+  - test_fake_model.py : Tests pour les modèles factices.
+  - test_main.py : Tests pour le script main.py.
