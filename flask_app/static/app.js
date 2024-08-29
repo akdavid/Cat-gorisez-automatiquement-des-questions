@@ -1,12 +1,11 @@
-// Activer le mode nuit par défaut
 document.addEventListener('DOMContentLoaded', function() {
     const toggleSwitch = document.getElementById('toggleDarkMode');
-    toggleSwitch.checked = true;  // Coche la case pour le mode nuit par défaut
-    document.body.classList.add('dark-mode');  // Ajoute la classe dark-mode au corps de la page
+    toggleSwitch.checked = true;  // Mode nuit par défaut
+    document.body.classList.add('dark-mode');
 
     // Afficher l'icône appropriée
-    document.querySelector('.sun').style.display = 'inline';  // Affiche l'icône du soleil
-    document.querySelector('.moon').style.display = 'none';   // Cache l'icône de la lune
+    document.querySelector('.sun').style.display = 'inline';
+    document.querySelector('.moon').style.display = 'none';
 });
 
 document.getElementById('toggleDarkMode').addEventListener('change', function() {
@@ -28,11 +27,15 @@ document.getElementById('toggleDarkMode').addEventListener('change', function() 
 document.getElementById('predictionForm').onsubmit = function(e) {
     e.preventDefault();
     let text = document.getElementById('text').value;
-    
+
     if (!text.trim()) {
         alert('Please enter some text.');
         return;
     }
+
+    // Afficher le chargement
+    document.getElementById('loading').style.display = 'block';
+    document.getElementById('result').style.display = 'none';
 
     fetch('/predict', {
         method: 'POST',
@@ -44,6 +47,12 @@ document.getElementById('predictionForm').onsubmit = function(e) {
     .then(response => response.json())
     .then(data => {
         let resultDiv = document.getElementById('result');
+        let loadingDiv = document.getElementById('loading');
+
+        // Masquer le chargement et afficher le résultat
+        loadingDiv.style.display = 'none';
+        resultDiv.style.display = 'block';
+
         if (data.error) {
             resultDiv.innerHTML = `<div class="alert alert-danger">${data.error}</div>`;
         } else {
@@ -56,6 +65,7 @@ document.getElementById('predictionForm').onsubmit = function(e) {
     })
     .catch(error => {
         console.error('Error:', error);
+        document.getElementById('loading').style.display = 'none';
         document.getElementById('result').innerHTML = '<div class="alert alert-danger">An error occurred while processing your request.</div>';
     });
 };

@@ -144,3 +144,18 @@ input[type="checkbox"]:checked + .slider .moon {
     color: #e0e0e0;
     border-color: #555;
 }
+
+/* Style pour le spinner de chargement */
+#loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    flex-direction: column;
+}
+
+.spinner-border {
+    width: 3rem;
+    height: 3rem;
+    border-width: 0.3rem;
+}

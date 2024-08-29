@@ -10,6 +10,8 @@
 <body>
     <div class="container">
         <h1 class="text-center">Tag Prediction with BERT</h1>
+        
+        <!-- Toggle for Dark/Light Mode -->
         <div class="theme-toggle">
             <input type="checkbox" id="toggleDarkMode">
             <label for="toggleDarkMode" class="slider">
@@ -17,6 +19,7 @@
                 <span class="icon moon">🌙</span>
             </label>
         </div>
+        
         <form action="/predict" method="post" id="predictionForm">
             <div class="mb-3">
                 <label for="text" class="form-label">Enter your text:</label>
@@ -26,6 +29,12 @@
         </form>
         <hr>
         <div id="result"></div>
+        <div id="loading" class="text-center" style="display: none;">
+            <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+            <p>Loading...</p>
+        </div>
     </div>
     <script src="{{ url_for('static', filename='app.js') }}"></script>
 </body>
