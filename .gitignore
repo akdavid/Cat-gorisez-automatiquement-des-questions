@@ -49,3 +49,6 @@ USE_tensorflow_tuto
 USE_transfer_learning_tuto
 w2v_model.weights.h5
 main_local.py
+main_local_2.py
+new_env/
+temp.py
