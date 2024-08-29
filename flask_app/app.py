@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, render_template, jsonify
 from transformers import pipeline
 
 app = Flask(__name__)
@@ -17,14 +17,7 @@ pipe = pipeline(
 
 @app.route('/')
 def home():
-    return '''
-        <h1>Tag Prediction with BERT</h1>
-        <form action="/predict" method="post">
-            <label for="text">Enter your text:</label><br>
-            <textarea id="text" name="text" rows="4" cols="50"></textarea><br>
-            <input type="submit" value="Predict Tags">
-        </form>
-    '''
+    return render_template('index.html')
 
 @app.route('/predict', methods=['POST'])
 def predict():
@@ -35,22 +28,11 @@ def predict():
     # Utiliser le pipeline pour obtenir des prédictions
     predictions = pipe(text)
 
-    # Print the predictions to inspect their structure
-    print("Predictions:", predictions)
-
     # Filtrer les résultats en fonction du seuil
     threshold = 0.5
-
-    # Handle different formats of predictions
-    recommended_tags = []
-    for pred in predictions:
-        if isinstance(pred, list):
-            for output in pred:
-                if output['score'] > threshold:
-                    recommended_tags.append(output['label'])
-        elif isinstance(pred, dict):
-            if pred['score'] > threshold:
-                recommended_tags.append(pred['label'])
+    recommended_tags = [
+        output['label'] for output in predictions[0] if output['score'] > threshold
+    ]
 
     return jsonify({
         "input_text": text,
