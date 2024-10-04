@@ -30,13 +30,13 @@ pipe = TextClassificationPipeline(
     function_to_apply='sigmoid'
 )
 
-def pred_ep(text, thresh=0.5, max_answers=10):
+def pred_ep(text, threshold=0.5, max_answers=10):
     """
     Prédit les tags les plus pertinents pour un texte donné.
 
     Args:
     - text (str): Le texte d'entrée.
-    - thresh (float): Le seuil de score pour sélectionner les tags.
+    - threshold (float): Le seuil de score pour sélectionner les tags.
     - max_answers (int): Le nombre maximal de tags à retourner.
 
     Returns:
@@ -49,7 +49,7 @@ def pred_ep(text, thresh=0.5, max_answers=10):
 
     # Filtrer les résultats en fonction du seuil
     recommended_tags = [
-        dict_output['label'] for dict_output in pipe_output if dict_output['score'] > thresh
+        dict_output['label'] for dict_output in pipe_output if dict_output['score'] > threshold
     ]
     
     return recommended_tags
