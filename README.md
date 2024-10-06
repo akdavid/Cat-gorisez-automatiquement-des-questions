@@ -1,5 +1,5 @@
 
-# Projet OpenClassrooms : Catégorisez automatiquement des questions
+# Catégorisez automatiquement des questions
 
 ## Description
 
